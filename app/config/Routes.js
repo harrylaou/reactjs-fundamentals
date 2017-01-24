@@ -3,14 +3,14 @@ import Main from '../components/Main'
 import Home from '../components/Home'
 import { Route, IndexRoute } from 'react-router'
 import UserProfile from '../components/user/UserProfile'
-import UserList from '../components/user/UserList'
+import UserListContainer from '../components/user/UserListContainer'
 import Login from '../components/Login'
 import WorkshopList from '../components/workshop/WorkshopList'
 
 const Routes = (
   <Route>
     <Route path="/" component={Main}>
-      <Route path="users" component={UserList}>
+      <Route path="users" component={UserListContainer}>
         <Route path=":username" component={UserProfile} />
       </Route>
       <Route path="workshops" component={WorkshopList} />

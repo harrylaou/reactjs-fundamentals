@@ -14,19 +14,41 @@ es6promise.polyfill()
 class UserListContainer extends Component {
   constructor() {
     super()
-    //add some code here
+    this.state = {
+      users: []
+    }
   }
     
   componentDidMount() {
-    //add some code here
+    fetch('/data/users.js', {
+      method: 'get'
+    }).then((response) => {
+      return response.json()
+    }).then((data) => {
+      this.setState({ users: data })
+    }).catch((err)=> {
+      console.log(err)
+    })
+  }
+
+  showUserProfile(user) {
+    this.context.router.push(`/users/${user.username}`)
   }
     
   render() {
     return (
-      //you need to change something here
-      <UserList username={this.props.params.username} users={this.state.users} />
+      <UserList
+        {...this.props}
+        username={this.props.params.username}
+        users={this.state.users}
+        showUserProfile={this.showUserProfile}
+      />
     )
   }
 }
 
 export default UserListContainer
+
+UserListContainer.contextTypes = {
+  router: React.PropTypes.object.isRequired
+}

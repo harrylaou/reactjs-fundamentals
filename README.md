@@ -24,7 +24,7 @@ Now you can run your application by running: `npm start`
 3. Clicking on a user on the list should display the user's profile. Hint:  Check UserListContainer, should it return children components?  
 4. Refactor UserProfile so it implements the [container component pattern](https://medium.com/@learnreact/container-components-c0e67432e005). Hint: You also need to change app/config/Routes.js
 5. Implement WorkshopList and WorkshopListContainer using http://localhost:3456/data/workshops.js
-
+6. (Optional) Upgrade all components (as much as you can) to stateless components (https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.oy1l2u2ew)
 
 ## What's next
 

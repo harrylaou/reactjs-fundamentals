@@ -19,7 +19,7 @@ export default class AppNavDrawer extends Component {
           Course Manager
         </div>
         <MenuItem onClick={this.menuItemClicked.bind(this,'/users')}>Students</MenuItem>
-        <MenuItem>Courses</MenuItem>
+        <MenuItem onClick={this.menuItemClicked.bind(this,'/workshops')}>Courses</MenuItem>
       </Drawer>
     )
   }

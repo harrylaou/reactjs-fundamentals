@@ -11,8 +11,9 @@ const Routes = (
   <Route>
     <Route path="/" component={Main}>
       <Route path="users" component={UserList}>
-          <Route path=":username" component={UserProfile} />
+        <Route path=":username" component={UserProfile} />
       </Route>
+      <Route path="workshops" component={WorkshopList} />
       <IndexRoute component={Home} />
     </Route>
     <Route path="login" component={Login}></Route>

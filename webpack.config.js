@@ -1,8 +1,8 @@
 module.exports = {
-    entry: "./app/App.js",
+    entry: './app/App.js',
     output: {
         path:'./public/',
-        filename : "bundle.js",
+        filename : 'bundle.js',
     },
     devServer: {
         inline: true,
@@ -14,14 +14,14 @@ module.exports = {
             {
                 test: /\.js?$/,
                 exclude: /(node_modules)/,
-                loader: "babel",
+                loader: 'babel',
                 query: {
-                    presets: ["react", "es2015"]
+                    presets: ['react', 'es2015']
                 }
             },
             {   test: /\.css$/, 
                 exclude: /\.useable\.css$/, 
-                loader: "style!css" 
+                loader: 'style!css'
             }
         ]
     }

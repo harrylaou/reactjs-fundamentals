@@ -17,6 +17,7 @@ class UserListContainer extends Component {
     this.state = {
       users: []
     }
+    this.showUserProfile = this.showUserProfile.bind(this)
   }
     
   componentDidMount() {

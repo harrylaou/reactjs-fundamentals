@@ -1,5 +1,6 @@
 [
   {
+    "id": "001",
     "title": "React Router and fetch data",
     "url": "http://www.meetup.com/JS-Lab-London/events/231907561/",
     "students" : "Unlimited",
@@ -13,6 +14,7 @@
     ]
   },
   {
+    "id": "002",
     "title": "React Master class",
     "url": "http://techdency.com/#react-training",
     "price": "£ 595",

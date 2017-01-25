@@ -24,8 +24,12 @@ Now you can run your application by running: `npm start`
 3. Clicking on a user on the list should display the user's profile. Hint:  Check UserListContainer, should it return children components?  
 4. Refactor UserProfile so it implements the [container component pattern](https://medium.com/@learnreact/container-components-c0e67432e005). Hint: You also need to change app/config/Routes.js
 5. Implement WorkshopList and WorkshopListContainer using http://localhost:3456/data/workshops.js
-6. (Optional) Upgrade all components (as much as you can) to stateless components (https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.oy1l2u2ew)
-
+6. Upgrade all components (as much as you can) to stateless components (https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.oy1l2u2ew)
+7. Finish implementation of Login Component (located in app/components/Login.js). Requirements:
+    1. The state of the inputs should be managed by the Login component. Hint: use the onChange event in the inputs
+    2. Handle the onClick button to validate the inputs. Hint: for validation you can use password: 1234 and username: reactfanboy
+    3. If the validation is correct redirect the user to the home page. Hint: you need the router which is in the context.
+    
 ## What's next
 
 Read the following articles to learn more about these subjects

@@ -16,7 +16,7 @@
   {
     "id": "002",
     "title": "React Master class",
-    "url": "http://techdency.com/#react-training",
+    "url": "https://reactjs.academy/react-redux-training-london",
     "price": "£ 595",
     "students" : "10 per instructor",
     "instructors": [
@@ -26,9 +26,9 @@
             "avatar": "https://pbs.twimg.com/profile_images/1540939151/whereIsAlexWithGlasses.jpg"
         },
         {
-            "name":"Mark Rivelles",
-            "url": "https://github.com/fsdevlondon",
-            "avatar": "https://pbs.twimg.com/profile_images/784142672370003969/Hj51EXIt.jpg"
+            "name":"Davy Engone",
+            "url": "https://github.com/davyengone",
+            "avatar": "https://pbs.twimg.com/profile_images/589582545022545921/qQRHggUr.jpg"
         }
     ]
   }

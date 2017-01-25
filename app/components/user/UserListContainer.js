@@ -39,11 +39,12 @@ class UserListContainer extends Component {
   render() {
     return (
       <UserList
-        {...this.props}
         username={this.props.params.username}
         users={this.state.users}
         showUserProfile={this.showUserProfile}
-      />
+      >
+        {this.props.children}
+      </UserList>
     )
   }
 }

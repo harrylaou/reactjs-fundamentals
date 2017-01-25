@@ -30,10 +30,11 @@ class UserProfileContainer extends Component {
   render() {
     return (
       <UserProfile
-        {...this.props}
         user={this.state.username}
         username={this.props.params.username}
-      />
+      >
+        {this.props.children}
+      </UserProfile>
     )
   }
 }

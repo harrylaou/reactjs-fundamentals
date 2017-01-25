@@ -16,7 +16,7 @@
   {
     "id": "002",
     "title": "React Master class",
-    "url": "http://techdency.com/#react-training",
+    "url": "https://reactjs.academy/react-redux-training-london",
     "price": "£ 595",
     "students" : "10 per instructor",
     "instructors": [

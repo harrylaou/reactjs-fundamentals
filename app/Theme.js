@@ -1,5 +1,5 @@
-import {spacing, typography} from 'material-ui/styles'
-import {pink, pinkA200, pink900, pink700, pinkA400, pinkA100, green100, fullWhite, grey600, green500, green700, deepOrange500, cyan500, cyan600, cyan700, grey900} from 'material-ui/styles/colors'
+import {spacing} from 'material-ui/styles'
+import {pink, pinkA200, pink900, pinkA400, pinkA100, fullWhite, grey600} from 'material-ui/styles/colors'
 import {fade} from 'material-ui/utils/colorManipulator'
 
 const Theme = {

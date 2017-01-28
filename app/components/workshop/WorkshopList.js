@@ -3,7 +3,7 @@ import {List, ListItem} from 'material-ui/List'
 import ActionGrade from 'material-ui/svg-icons/action/grade'
 import Avatar from 'material-ui/Avatar'
 import {pinkA200} from 'material-ui/styles/colors'
-import withWidth, { LARGE} from '../../utils/WithWidth'
+import withWidth, {LARGE} from '../../utils/WithWidth'
 
 
 const WorkshopList = (props) => {
@@ -38,6 +38,12 @@ const WorkshopList = (props) => {
       {detailView}
     </div>
   )
+}
+
+WorkshopList.propTypes = {
+  workshops: React.PropTypes.array.isRequired,
+  username: React.PropTypes.string.isRequired,
+  width: React.PropTypes.number.isRequired
 }
 
 export default withWidth()(WorkshopList)

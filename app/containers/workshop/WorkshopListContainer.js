@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
-import WorkshopList from './WorkshopList'
-import es6promise from 'es6-promise'
-import 'isomorphic-fetch'
+import WorkshopList from '../../components/workshop/WorkshopList'
+import * as api from '../../api'
 
-es6promise.polyfill()
 
 class WorkshopListContainer extends Component {
   constructor() {
@@ -15,15 +13,14 @@ class WorkshopListContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('/data/workshops.js', {
-      method: 'get'
-    }).then((response) => {
-      return response.json()
-    }).then((data) => {
-      this.setState({ workshops: data })
-    }).catch((err)=> {
-      console.log(err)
-    })
+    api
+      .getWorkshops()
+      .then((data) => {
+        this.setState({ workshops: data })
+      })
+      .catch((err)=> {
+        console.log(err)
+      })
   }
 
   showWorkshop(workshop) {
@@ -42,8 +39,12 @@ class WorkshopListContainer extends Component {
   }
 }
 
-export default WorkshopListContainer
-
 WorkshopListContainer.contextTypes = {
   router: React.PropTypes.object.isRequired
 }
+
+WorkshopListContainer.propTypes = {
+  params: React.PropTypes.object.isRequired
+}
+
+export default WorkshopListContainer

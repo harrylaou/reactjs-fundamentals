@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
-import UserProfile from './UserProfile'
-import es6promise from 'es6-promise'
-import 'isomorphic-fetch'
+import UserProfile from '../../components/user/UserProfile'
+import * as api from '../../api'
 
-es6promise.polyfill()
 
 class UserProfileContainer extends Component {
   constructor() {
@@ -16,15 +14,14 @@ class UserProfileContainer extends Component {
   }
 
   fetchUser(username) {
-    fetch(`/data/users/${username}.json`, {
-      method: 'get'
-    }).then((response) => {
-      return response.json()
-    }).then((data) => {
-      this.setState({user : data})
-    }).catch((err)=> {
-      console.log(err)
-    })
+    api
+      .getUser(username)
+      .then((data) => {
+        this.setState({ user: data })
+      })
+      .catch((err)=> {
+        console.log(err)
+      })
   }
 
   render() {
@@ -36,6 +33,10 @@ class UserProfileContainer extends Component {
       />
     )
   }
+}
+
+UserProfileContainer.propTypes = {
+  params: React.PropTypes.object.isRequired
 }
 
 export default UserProfileContainer

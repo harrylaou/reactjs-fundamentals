@@ -2,15 +2,10 @@ import React, {Component} from 'react'
 import AppBar from 'material-ui/AppBar'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import {
-  pink, pinkA200, pink900, pink700, pinkA400, pinkA100, green100,
-  fullWhite, grey600, green500, green700, deepOrange500, cyan500,
-  cyan600, cyan700, grey900
-} from 'material-ui/styles/colors'
-import RaisedButton from 'material-ui/RaisedButton'
+import { pink, pink700 } from 'material-ui/styles/colors'
 import AppNavDrawer from './AppNavDrawer'
 import {spacing, colorManipulator, typography, zIndex} from 'material-ui/styles'
-import withWidth, {MEDIUM, LARGE} from '../utils/WithWidth'
+import withWidth, {LARGE} from '../utils/WithWidth'
 import theme from '../Theme'
 
 const muiTheme = getMuiTheme(theme)
@@ -69,7 +64,6 @@ class Main extends Component {
     }
 
     let sectionStyles = prepareStyles(styles.root)
-    let appBarStyles = prepareStyles(styles.appBar)
 
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
@@ -94,6 +88,10 @@ class Main extends Component {
       </MuiThemeProvider>
     )
   }
+}
+
+Main.propTypes = {
+  width: React.PropTypes.number.isRequired
 }
 
 export default withWidth()(Main)

@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
-import WorkshopInfo from './WorkshopInfo'
-import es6promise from 'es6-promise'
-import 'isomorphic-fetch'
+import WorkshopInfo from '../../components/workshop/WorkshopInfo'
+import * as api from '../../api'
 
-es6promise.polyfill()
 
 class WorkshopInfoContainer extends Component {
   constructor() {
@@ -17,15 +15,14 @@ class WorkshopInfoContainer extends Component {
   }
 
   fetchWorkshop(workshop) {
-    fetch(`/data/workshops/${workshop}.json`, {
-      method: 'get'
-    }).then((response) => {
-      return response.json()
-    }).then((data) => {
-      this.setState({workshop : data})
-    }).catch((err)=> {
-      console.log(err)
-    })
+    api
+      .getWorkshop(workshop)
+      .then((data) => {
+        this.setState({ workshop : data })
+      })
+      .catch((err)=> {
+        console.log(err)
+      })
   }
 
   render() {
@@ -38,6 +35,10 @@ class WorkshopInfoContainer extends Component {
       />
     )
   }
+}
+
+WorkshopInfoContainer.propTypes = {
+  params: React.PropTypes.object.isRequired
 }
 
 export default WorkshopInfoContainer

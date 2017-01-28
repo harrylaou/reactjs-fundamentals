@@ -2,11 +2,11 @@ import React from 'react'
 import Main from '../components/Main'
 import Home from '../components/Home'
 import { Route, IndexRoute } from 'react-router'
-import UserProfileContainer from '../components/user/UserProfileContainer'
-import UserListContainer from '../components/user/UserListContainer'
+import UserProfileContainer from '../containers/user/UserProfileContainer'
+import UserListContainer from '../containers/user/UserListContainer'
 import Login from '../components/Login'
-import WorkshopListContainer from '../components/workshop/WorkshopListContainer'
-import WorkshopInfoContainer from '../components/workshop/WorkshopInfoContainer'
+import WorkshopListContainer from '../containers/workshop/WorkshopListContainer'
+import WorkshopInfoContainer from '../containers/workshop/WorkshopInfoContainer'
 
 const Routes = (
   <Route>

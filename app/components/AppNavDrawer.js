@@ -30,5 +30,6 @@ AppNavDrawer.contextTypes = {
 }
 
 AppNavDrawer.propTypes = {
-    toggleNav: React.PropTypes.func.isRequired,
+  toggleNav: React.PropTypes.func.isRequired,
+  styles: React.PropTypes.object.isRequired
 }

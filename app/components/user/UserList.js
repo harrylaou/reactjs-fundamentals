@@ -36,4 +36,11 @@ const UserList = (props) => {
   )
 }
 
+UserList.propTypes = {
+  users: React.PropTypes.array.isRequired,
+  username: React.PropTypes.string.isRequired,
+  width: React.PropTypes.number.isRequired
+}
+
+
 export default withWidth()(UserList)

@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import UserList from '../../components/user/UserList'
 import * as api from '../../api'
 import withWidth from '../../utils/WithWidth'
+import { withRouter } from 'react-router'
 
 class UserListContainer extends Component {
   constructor() {
@@ -24,7 +25,7 @@ class UserListContainer extends Component {
   }
 
   showUserProfile(user) {
-    this.context.router.push(`/users/${user.username}`)
+    this.props.router.push(`/users/${user.username}`)
   }
 
   render() {
@@ -40,13 +41,9 @@ class UserListContainer extends Component {
   }
 }
 
-UserListContainer.contextTypes = {
-  router: React.PropTypes.object.isRequired
-}
-
 UserListContainer.propTypes = {
   params: React.PropTypes.object.isRequired,
   width: React.PropTypes.number.isRequired
 }
 
-export default withWidth(UserListContainer)
+export default withRouter(withWidth(UserListContainer))

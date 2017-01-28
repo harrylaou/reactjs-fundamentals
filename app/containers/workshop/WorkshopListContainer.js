@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import WorkshopList from '../../components/workshop/WorkshopList'
 import * as api from '../../api'
 import withWidth from '../../utils/WithWidth'
+import withRouter from '../../utils/WithRouter'
 
 class WorkshopListContainer extends Component {
   constructor() {
@@ -24,7 +25,7 @@ class WorkshopListContainer extends Component {
   }
 
   showWorkshop(workshop) {
-    this.context.router.push(`/workshops/${workshop.id}`)
+    this.props.router.push(`/workshops/${workshop.id}`)
   }
 
   render() {
@@ -39,14 +40,14 @@ class WorkshopListContainer extends Component {
     )
   }
 }
-
+/*
 WorkshopListContainer.contextTypes = {
   router: React.PropTypes.object.isRequired
 }
-
+*/
 WorkshopListContainer.propTypes = {
   width: React.PropTypes.number.isRequired,
   params: React.PropTypes.object.isRequired
 }
 
-export default withWidth(WorkshopListContainer)
+export default withRouter(withWidth(WorkshopListContainer))

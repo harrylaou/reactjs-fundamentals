@@ -40,4 +40,9 @@ const WorkshopInfo = (props) => {
   )
 }
 
+WorkshopInfo.propTypes = {
+  workshop: React.PropTypes.object,
+  workshopID: React.PropTypes.string
+}
+
 export default WorkshopInfo

@@ -24,7 +24,7 @@ const WorkshopList = (props) => {
 
   let masterView, detailView
 
-  if (props.username && props.width !== LARGE) {
+  if (props.workshop && props.width !== LARGE) {
     masterView = childrenView
     detailView = null
   } else {
@@ -41,7 +41,7 @@ const WorkshopList = (props) => {
 
 WorkshopList.propTypes = {
   workshops: React.PropTypes.array.isRequired,
-  username: React.PropTypes.string,
+  workshop: React.PropTypes.string,
   width: React.PropTypes.number.isRequired
 }
 

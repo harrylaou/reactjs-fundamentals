@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import WorkshopInfo from '../../components/workshop/WorkshopInfo'
 import * as api from '../../api'
 
-
 class WorkshopInfoContainer extends Component {
   constructor() {
     super()

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import WorkshopList from '../../components/workshop/WorkshopList'
 import * as api from '../../api'
-
+import withWidth from '../../utils/WithWidth'
 
 class WorkshopListContainer extends Component {
   constructor() {
@@ -34,6 +34,7 @@ class WorkshopListContainer extends Component {
         workshop={this.props.params.workshop}
         workshops={this.state.workshops}
         showWorkshop={this.showWorkshop}
+        width={this.props.width}
       />
     )
   }
@@ -44,7 +45,8 @@ WorkshopListContainer.contextTypes = {
 }
 
 WorkshopListContainer.propTypes = {
+  width: React.PropTypes.number.isRequired,
   params: React.PropTypes.object.isRequired
 }
 
-export default WorkshopListContainer
+export default withWidth(WorkshopListContainer)

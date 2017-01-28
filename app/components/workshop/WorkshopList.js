@@ -5,7 +5,6 @@ import Avatar from 'material-ui/Avatar'
 import {pinkA200} from 'material-ui/styles/colors'
 import withWidth, {LARGE} from '../../utils/WithWidth'
 
-
 const WorkshopList = (props) => {
   let listItems = props.workshops.map(workshop => (
     <ListItem
@@ -42,8 +41,8 @@ const WorkshopList = (props) => {
 
 WorkshopList.propTypes = {
   workshops: React.PropTypes.array.isRequired,
-  username: React.PropTypes.string.isRequired,
+  username: React.PropTypes.string,
   width: React.PropTypes.number.isRequired
 }
 
-export default withWidth()(WorkshopList)
+export default WorkshopList

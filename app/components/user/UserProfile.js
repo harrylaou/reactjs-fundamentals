@@ -37,4 +37,9 @@ const UserProfile = (props) => {
   )
 }
 
+UserProfile.propTypes = {
+  user: React.PropTypes.array,
+  username: React.PropTypes.string
+}
+
 export default UserProfile

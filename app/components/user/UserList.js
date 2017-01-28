@@ -3,7 +3,7 @@ import {List, ListItem} from 'material-ui/List'
 import ActionGrade from 'material-ui/svg-icons/action/grade'
 import Avatar from 'material-ui/Avatar'
 import {pinkA200} from 'material-ui/styles/colors'
-import withWidth, { LARGE} from '../../utils/WithWidth'
+import { LARGE} from '../../utils/WithWidth'
 
 
 const UserList = (props) => {
@@ -38,9 +38,9 @@ const UserList = (props) => {
 
 UserList.propTypes = {
   users: React.PropTypes.array.isRequired,
-  username: React.PropTypes.string.isRequired,
+  username: React.PropTypes.string,
   width: React.PropTypes.number.isRequired
 }
 
 
-export default withWidth()(UserList)
+export default UserList

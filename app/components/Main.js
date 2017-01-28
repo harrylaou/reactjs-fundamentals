@@ -94,4 +94,4 @@ Main.propTypes = {
   width: React.PropTypes.number.isRequired
 }
 
-export default withWidth()(Main)
+export default withWidth(Main)

@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import { withRouter } from 'react-router'
-import { connect } from 'react-redux'
 import AppBar from 'material-ui/AppBar'
 import FlatButton from 'material-ui/FlatButton'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
@@ -10,7 +9,6 @@ import AppNavDrawer from './AppNavDrawer'
 import {spacing, colorManipulator, typography, zIndex} from 'material-ui/styles'
 import withWidth, {LARGE} from '../utils/WithWidth'
 import theme from '../Theme'
-import * as actions from '../actions/login'
 
 const muiTheme = getMuiTheme(theme)
 
@@ -49,7 +47,7 @@ class Main extends Component {
   }
 
   logoutUser() {
-    this.props.dispatch(actions.logoutUser())
+    localStorage.setItem('isAuthenticated', 0)
     this.props.router.push('/login')
   }
 
@@ -105,11 +103,4 @@ Main.propTypes = {
   width: React.PropTypes.number.isRequired
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  dispatch
-})
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(withRouter(withWidth(Main)))
+export default withRouter(withWidth(Main))

@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {FormGroup, FormControl, Button} from 'react-bootstrap'
 import withRouter from '../utils/WithRouter'
-import * as actions from '../actions/login'
 
 class Login extends Component {
   constructor () {
@@ -21,11 +20,11 @@ class Login extends Component {
   }
 
   handleSubmit () {
-    debugger
     if (this.state.username === 'demo' &&
         this.state.password === '1234') {
 
-      this.props.dispatch(actions.loginUser())
+      // It's a temporary solution until you know more about redux
+      localStorage.setItem('isAuthenticated', 1)
       this.props.router.push('/')
     }
   }
@@ -68,12 +67,4 @@ class Login extends Component {
   }
 }
 
-
-const mapDispatchToProps = (dispatch) => ({
-  dispatch
-})
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(withRouter(Login))
+export default withRouter(Login)

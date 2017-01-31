@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import WorkshopInfo from '../../components/workshop/WorkshopInfo'
 import * as api from '../../api'
+import * as actions from '../../actions/workshop'
 
 class WorkshopInfoContainer extends Component {
   constructor() {
     super()
-    this.state = { workshop: null }
     this.fetchWorkshop = this.fetchWorkshop.bind(this)
   }
 
@@ -16,8 +17,8 @@ class WorkshopInfoContainer extends Component {
   fetchWorkshop(workshop) {
     api
       .getWorkshop(workshop)
-      .then((data) => {
-        this.setState({ workshop : data })
+      .then((workshop) => {
+        this.props.dispatch(actions.receiveWorkshop(workshop))
       })
       .catch((err)=> {
         console.log(err)
@@ -29,7 +30,7 @@ class WorkshopInfoContainer extends Component {
       <WorkshopInfo
         {...this.props}
         fetchWorkshop={this.fetchWorkshop}
-        workshop={this.state.workshop}
+        workshop={this.props.workshop}
         workshopID={this.props.params.workshop}
       />
     )
@@ -40,4 +41,15 @@ WorkshopInfoContainer.propTypes = {
   params: React.PropTypes.object.isRequired
 }
 
-export default WorkshopInfoContainer
+const mapStateToProps = (state) => ({
+  workshop: state.workshop
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  dispatch
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(WorkshopInfoContainer)

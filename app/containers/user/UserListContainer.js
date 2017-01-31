@@ -1,27 +1,28 @@
 import React, {Component} from 'react'
+import { withRouter } from 'react-router'
+import { connect } from 'react-redux'
 import UserList from '../../components/user/UserList'
 import * as api from '../../api'
+import * as actions from '../../actions/users'
 import withWidth from '../../utils/WithWidth'
-import { withRouter } from 'react-router'
+
 
 class UserListContainer extends Component {
   constructor() {
     super()
-    this.state = {
-      users: []
-    }
     this.showUserProfile = this.showUserProfile.bind(this)
   }
 
   componentDidMount() {
     api
       .getUsers()
-      .then((data) => {
-        this.setState({ users: data })
+      .then((users) => {
+        this.props.dispatch(actions.receiveUsers(users))
       })
       .catch((err)=> {
         console.log(err)
       })
+
   }
 
   showUserProfile(user) {
@@ -33,7 +34,7 @@ class UserListContainer extends Component {
       <UserList
         {...this.props}
         username={this.props.params.username}
-        users={this.state.users}
+        users={this.props.users}
         showUserProfile={this.showUserProfile}
         width={this.props.width}
       />
@@ -46,4 +47,15 @@ UserListContainer.propTypes = {
   width: React.PropTypes.number.isRequired
 }
 
-export default withRouter(withWidth(UserListContainer))
+const mapStateToProps = (state) => ({
+  users: state.users
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  dispatch
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(withWidth(UserListContainer)))

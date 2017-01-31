@@ -7,11 +7,12 @@ import UserListContainer from '../containers/user/UserListContainer'
 import Login from '../components/Login'
 import WorkshopListContainer from '../containers/workshop/WorkshopListContainer'
 import WorkshopInfoContainer from '../containers/workshop/WorkshopInfoContainer'
+import authCheck from './authCheck'
 
 const Routes = (
   <Route>
-    <Route path="/" component={Main}>
-      <Route path="users" component={UserListContainer}>
+    <Route path="/" component={Main} onEnter={authCheck}>
+      <Route path="users" component={UserListContainer} >
         <Route path=":username" component={UserProfileContainer} />
       </Route>
       <Route path="workshops" component={WorkshopListContainer} >

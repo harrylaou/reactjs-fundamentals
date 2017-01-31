@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import {FormGroup, FormControl, Button} from 'react-bootstrap'
+import withRouter from '../utils/WithRouter'
+import * as actions from '../actions/login'
 
 class Login extends Component {
   constructor () {
@@ -18,10 +21,12 @@ class Login extends Component {
   }
 
   handleSubmit () {
-    if (this.state.username === 'reactboy' &&
+    debugger
+    if (this.state.username === 'demo' &&
         this.state.password === '1234') {
 
-       this.context.router.push('/')
+      this.props.dispatch(actions.loginUser())
+      this.props.router.push('/')
     }
   }
 
@@ -36,7 +41,7 @@ class Login extends Component {
           <FormControl
             className="form-control"
             id="email"
-            type="email"
+            type="string"
             value={this.state.username}
             onChange={this.handleChange.bind(this, 'username')}
             placeholder="Enter email"
@@ -54,7 +59,6 @@ class Login extends Component {
         <Button
           bsSize="large"
           bsStyle="primary"
-          block type="submit"
           onClick={this.handleSubmit}
         >
           Sign in
@@ -64,8 +68,12 @@ class Login extends Component {
   }
 }
 
-Login.contextTypes = {
-  router: React.PropTypes.object.isRequired
-}
 
-export default Login
+const mapDispatchToProps = (dispatch) => ({
+  dispatch
+})
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(withRouter(Login))

@@ -1,23 +1,22 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import WorkshopList from '../../components/workshop/WorkshopList'
 import * as api from '../../api'
+import * as actions from '../../actions/workshops'
 import withWidth from '../../utils/WithWidth'
 import withRouter from '../../utils/WithRouter'
 
 class WorkshopListContainer extends Component {
   constructor() {
     super()
-    this.state = {
-      workshops: []
-    }
     this.showWorkshop = this.showWorkshop.bind(this)
   }
 
   componentDidMount() {
     api
       .getWorkshops()
-      .then((data) => {
-        this.setState({ workshops: data })
+      .then((workshops) => {
+        this.props.dispatch(actions.receiveWorkshops(workshops))
       })
       .catch((err)=> {
         console.log(err)
@@ -33,21 +32,28 @@ class WorkshopListContainer extends Component {
       <WorkshopList
         {...this.props}
         workshop={this.props.params.workshop}
-        workshops={this.state.workshops}
+        workshops={this.props.workshops}
         showWorkshop={this.showWorkshop}
         width={this.props.width}
       />
     )
   }
 }
-/*
-WorkshopListContainer.contextTypes = {
-  router: React.PropTypes.object.isRequired
-}
-*/
+
 WorkshopListContainer.propTypes = {
   width: React.PropTypes.number.isRequired,
   params: React.PropTypes.object.isRequired
 }
 
-export default withRouter(withWidth(WorkshopListContainer))
+const mapStateToProps = (state) => ({
+  workshops: state.workshops
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  dispatch
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(withWidth(WorkshopListContainer)))

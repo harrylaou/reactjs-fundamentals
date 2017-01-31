@@ -6,6 +6,8 @@ import withRouter from '../utils/WithRouter'
 class Login extends Component {
   constructor () {
     super()
+
+    // Do you think it is good to put this state (username, password) in Redux ?
     this.state = {
       username: '',
       password: ''

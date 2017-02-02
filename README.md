@@ -30,6 +30,8 @@ Now you can run your application by running: `npm start`
     2. Handle the onClick button to validate the inputs. Hint: for validation you can use password: 1234 and username: reactfanboy
     3. If the validation is correct redirect the user to the home page. Hint: you need the router which is in the context.
 
+Redux
+8. Implement redux bla bla bla
 ## What's next
 
 Read the following articles to learn more about these subjects

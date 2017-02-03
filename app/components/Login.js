@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {FormGroup, FormControl, Button} from 'react-bootstrap'
+import { withRouter } from 'react-router'
 
 class Login extends Component {
   constructor () {
@@ -64,8 +65,4 @@ class Login extends Component {
   }
 }
 
-Login.contextTypes = {
-  router: React.PropTypes.object.isRequired
-}
-
-export default Login
+export default withRouter(Login)

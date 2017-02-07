@@ -8,9 +8,23 @@ import Login from '../components/Login'
 import WorkshopListContainer from '../containers/workshop/WorkshopListContainer'
 import WorkshopInfoContainer from '../containers/workshop/WorkshopInfoContainer'
 
+const authCheck = (nextState, replace) => {
+  const auth = parseInt(
+    (typeof localStorage !== 'undefined' && localStorage.getItem('isAuthenticated'))
+    || 0
+  )
+
+  if (!auth) {
+    replace({
+      pathname: '/login',
+      state: { nextPathname: nextState.location.pathname }
+    })
+  }
+}
+
 const Routes = (
   <Route>
-    <Route path="/" component={Main}>
+    <Route path="/" component={Main} onEnter={authCheck}>
       <Route path="users" component={UserListContainer}>
         <Route path=":username" component={UserProfileContainer} />
       </Route>

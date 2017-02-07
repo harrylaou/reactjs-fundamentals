@@ -18,11 +18,17 @@ class Login extends Component {
     this.setState(change)
   }
 
-  handleSubmit () {
+  handleSubmit (e) {
+    e.preventDefault()
+
     if (this.state.username === 'reactboy' &&
         this.state.password === '1234') {
 
-       this.context.router.push('/')
+      // This is a temporary solution until you know more about redux
+      // check branch sol008 for a bit more real world solution
+      localStorage.setItem('isAuthenticated', 1)
+
+      this.props.router.push('/')
     }
   }
 
@@ -37,7 +43,7 @@ class Login extends Component {
           <FormControl
             className="form-control"
             id="email"
-            type="email"
+            type="text"
             value={this.state.username}
             onChange={this.handleChange.bind(this, 'username')}
             placeholder="Enter email"

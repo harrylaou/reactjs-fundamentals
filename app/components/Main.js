@@ -2,8 +2,10 @@ import React, {Component} from 'react'
 import AppBar from 'material-ui/AppBar'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import FlatButton from 'material-ui/FlatButton'
 import { pink, pink700 } from 'material-ui/styles/colors'
 import AppNavDrawer from './AppNavDrawer'
+import { withRouter } from 'react-router'
 import {spacing, colorManipulator, typography, zIndex} from 'material-ui/styles'
 import withWidth, {LARGE} from '../utils/WithWidth'
 import theme from '../Theme'
@@ -18,7 +20,14 @@ class Main extends Component {
     }
     this.toggleNav = this.toggleNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
+    this.logoutUser = this.logoutUser.bind(this)
   }
+
+  logoutUser() {
+    localStorage.setItem('isAuthenticated', 0)
+    this.props.router.push('/login')
+  }
+
   getStyles() {
     const styles = {
       appBar: {
@@ -28,6 +37,9 @@ class Main extends Component {
         color: typography.textFullWhite
       },
       root: {},
+      nav: {
+        color: typography.textFullWhite
+      },
       logo: {
         cursor: 'pointer',
         fontSize: 24,
@@ -70,8 +82,8 @@ class Main extends Component {
         <div className="main-view">
           <AppBar
             title="Course Manager"
-            iconClassNameRight="muidocs-icon-navigation-expand-more"
             onLeftIconButtonTouchTap={this.toggleNav}
+            iconElementRight={<FlatButton style={{ color:styles.nav.color }} label="Logout" onClick={()=>{ this.logoutUser() }}/>}
             className="app-bar"
           />
           <AppNavDrawer
@@ -94,4 +106,4 @@ Main.propTypes = {
   width: React.PropTypes.number.isRequired
 }
 
-export default withWidth(Main)
+export default withRouter(withWidth(Main))

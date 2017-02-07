@@ -3,70 +3,47 @@ import {connect} from 'react-redux'
 import {FormGroup, FormControl, Button} from 'react-bootstrap'
 import { withRouter } from 'react-router'
 
-class Login extends Component {
-  constructor () {
-    super()
+const Login = ({ username, password, handleSubmit, handleChange }) => (
+  <form className="form-signin">
+    <FormGroup>
+      <h2 className="form-signin-heading">Please sign in</h2>
+    </FormGroup>
 
-    // Do you think it is good to put this state (username, password) in Redux ?
-    this.state = {
-      username: '',
-      password: ''
-    }
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
+    <FormGroup>
+      <FormControl
+        className="form-control"
+        id="email"
+        type="string"
+        value={username}
+        onChange={handleChange.bind(null, 'username')}
+        placeholder="Enter email"
+      />
+      <FormControl
+        className="form-control"
+        id="password"
+        type="password"
+        value={password}
+        onChange={handleChange.bind(null, 'password')}
+        placeholder="Password"
+      />
+    </FormGroup>
 
-  handleChange (name, event) {
-    let change = {}
-    change[name] = event.target.value
-    this.setState(change)
-  }
+    <Button
+      bsSize="large"
+      bsStyle="primary"
+      onClick={handleSubmit}
+    >
+      Sign in
+    </Button>
+  </form>
+)
 
-  handleSubmit () {
-    if (this.state.username === 'demo' &&
-        this.state.password === '1234') {
-
-      // It's a temporary solution until you know more about redux
-      localStorage.setItem('isAuthenticated', 1)
-      this.props.router.push('/')
-    }
-  }
-
-  render () {
-    return (
-      <form className="form-signin">
-        <FormGroup>
-          <h2 className="form-signin-heading">Please sign in</h2>
-        </FormGroup>
-
-        <FormGroup>
-          <FormControl
-            className="form-control"
-            id="email"
-            type="string"
-            value={this.state.username}
-            onChange={this.handleChange.bind(this, 'username')}
-            placeholder="Enter email"
-          />
-          <FormControl
-            className="form-control"
-            id="password"
-            type="password"
-            value={this.state.password}
-            onChange={this.handleChange.bind(this, 'password')}
-            placeholder="Password"
-          />
-        </FormGroup>
-
-        <Button
-          bsSize="large"
-          bsStyle="primary"
-          onClick={this.handleSubmit}
-        >
-          Sign in
-        </Button>
-      </form>
-    )
-  }
+Login.propTypes = {
+  router: React.PropTypes.object,
+  username: React.PropTypes.string,
+  password: React.PropTypes.string,
+  handleSubmit: React.PropTypes.func,
+  handleChange: React.PropTypes.func,
 }
 
-export default withRouter(Login)
+export default Login

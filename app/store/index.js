@@ -1,9 +1,10 @@
 import { createStore } from 'redux'
 import reducers from '../reducers'
 
-const configureStore = () => {
+const configureStore = (initialState = undefined) => {
   return createStore(
-    reducers
+    reducers,
+    initialState
   )
 }
 

@@ -1,14 +1,13 @@
-import React, {Component} from 'react'
-import { withRouter } from 'react-router'
+import React, { Component } from 'react'
 import AppBar from 'material-ui/AppBar'
-import FlatButton from 'material-ui/FlatButton'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import { pink, pink700 } from 'material-ui/styles/colors'
 import AppNavDrawer from './AppNavDrawer'
-import {spacing, colorManipulator, typography, zIndex} from 'material-ui/styles'
-import withWidth, {LARGE} from '../utils/WithWidth'
+import { spacing, colorManipulator, typography, zIndex } from 'material-ui/styles'
+import withWidth, { LARGE } from '../utils/WithWidth'
 import theme from '../Theme'
+import LogoutContainer from '../containers/LogoutContainer'
 
 const muiTheme = getMuiTheme(theme)
 
@@ -20,8 +19,8 @@ class Main extends Component {
     }
     this.toggleNav = this.toggleNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
-    this.logoutUser = this.logoutUser.bind(this)
   }
+
   getStyles() {
     const styles = {
       appBar: {
@@ -31,6 +30,9 @@ class Main extends Component {
         color: typography.textFullWhite
       },
       root: {},
+      nav: {
+        color: typography.textFullWhite,
+      },
       logo: {
         cursor: 'pointer',
         fontSize: 24,
@@ -44,11 +46,6 @@ class Main extends Component {
     }
 
     return styles
-  }
-
-  logoutUser() {
-    localStorage.setItem('isAuthenticated', 0)
-    this.props.router.push('/login')
   }
 
   toggleNav() {
@@ -79,7 +76,7 @@ class Main extends Component {
           <AppBar
             title="Course Manager"
             onLeftIconButtonTouchTap={this.toggleNav}
-            iconElementRight={<FlatButton label="Logout" onClick={()=>{ this.logoutUser() }}/>}
+            iconElementRight={<LogoutContainer color={styles.nav.color} />}
             className="app-bar"
           />
           <AppNavDrawer
@@ -102,4 +99,4 @@ Main.propTypes = {
   width: React.PropTypes.number.isRequired
 }
 
-export default withRouter(withWidth(Main))
+export default withWidth(Main)

@@ -61,7 +61,6 @@ const mapDispatchToProps = (dispatch) => ({
   dispatch
 })
 
-// Do you think the order of these components matter?
 export default connect(
   mapStateToProps,
   mapDispatchToProps

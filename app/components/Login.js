@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {FormGroup, FormControl, Button} from 'react-bootstrap'
-import withRouter from '../utils/WithRouter'
+import { withRouter } from 'react-router'
 
 class Login extends Component {
   constructor () {

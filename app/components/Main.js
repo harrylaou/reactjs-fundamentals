@@ -78,7 +78,6 @@ class Main extends Component {
         <div className="main-view">
           <AppBar
             title="Course Manager"
-            iconClassNameRight="muidocs-icon-navigation-expand-more"
             onLeftIconButtonTouchTap={this.toggleNav}
             iconElementRight={<FlatButton label="Logout" onClick={()=>{ this.logoutUser() }}/>}
             className="app-bar"

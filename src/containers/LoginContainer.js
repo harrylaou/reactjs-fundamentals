@@ -55,8 +55,8 @@ class LoginContainer extends React.Component {
       <Login
         handleSubmit={this.handleSubmit}
         handleChange={this.handleChange}
-        username={this.username}
-        password={this.password}
+        username={this.state.username}
+        password={this.state.password}
       />
     )
   }

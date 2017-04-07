@@ -23,7 +23,7 @@ describe('<AppNavDrawer />', () => {
       }}
     )
 
-    expect(shallowToJson(wrapper.dive())).toMatchSnapshot()
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
 
     wrapper.find('MenuItem').at(0).simulate('click')
 

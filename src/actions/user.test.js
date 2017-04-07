@@ -6,6 +6,6 @@ test(`Return an Action tyoe ${RECEIVE_USER}`, () => {
     type: RECEIVE_USER,
     user
   })
-
+  
   expect(receiveUser(user)).toMatchSnapshot()
 })

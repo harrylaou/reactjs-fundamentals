@@ -47,7 +47,7 @@ describe('<UserProfileContainer />', () => {
     })
   })
 
-  describe('Mount + Wrapping Provider', () => {
+  describe('Integration test: Mount + Wrapping Provider', () => {
     let wrapper
 
     beforeEach(()=>{
@@ -85,11 +85,10 @@ describe('<UserProfileContainer />', () => {
       const action = store.getActions()
 
       expect(action[0].type).toBe(actions.RECEIVE_USER)
-      //expect(wrapper.find(UserProfileContainer).prop('user')).toEqual(userData.user)
     })
   })
 
-  describe('Mount + Wrapping Provider + Actual Store + Reducers', () => {
+  describe('Integration test: Mount + Wrapping Provider + Actual Store + Reducers', () => {
     let wrapper
 
     beforeEach(()=>{
@@ -119,7 +118,8 @@ describe('<UserProfileContainer />', () => {
     })
 
     it('should check action dispatch', () => {
-      store.dispatch(actions.receiveUser(userData))
+      //OR store.dispatch(actions.receiveUser(userData))
+      wrapper.find(UserProfileContainer).props().dispatch(actions.receiveUser(userData))
 
       expect(wrapper.find(UserProfileContainer).prop('user')).toEqual(userData)
     })

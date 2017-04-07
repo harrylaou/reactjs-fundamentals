@@ -5,7 +5,7 @@ import UserList from './UserList'
 
 describe('<UserList />', () => {
   it('should render with default props', () => {
-    const onClick = jest.fn();
+    const onClick = jest.fn()
     const user = {
       username: 'paco',
       name: {

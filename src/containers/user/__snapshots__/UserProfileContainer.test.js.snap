@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserProfileContainer /> <ConnectedUserProfileContainer /> should render connected component 1`] = `
+<UserProfileContainer
+  dispatch={[Function]}
+  params={
+    Object {
+      "username": "123",
+    }
+  }
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  user="Manolo"
+/>
+`;
+
+exports[`<UserProfileContainer /> should render with default props 1`] = `
+<Card
+  expandable={false}
+  expanded={null}
+  initiallyExpanded={false}
+>
+  <CardHeader
+    avatar="/images/123_sm.jpg"
+    subtitle="123"
+    title=""
+  />
+  <CardMedia
+    overlay={
+      <CardTitle
+        subtitle=""
+        title=""
+      />
+    }
+  >
+    <img
+      src="/images/123_lg.jpg"
+    />
+  </CardMedia>
+  <CardActions />
+</Card>
+`;

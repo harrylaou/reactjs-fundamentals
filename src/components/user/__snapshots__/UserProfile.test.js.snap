@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserProfile /> should render with default props 1`] = `
+<Paper
+  circle={false}
+  rounded={true}
+  style={
+    Object {
+      "zIndex": 1,
+    }
+  }
+  transitionEnabled={true}
+  zDepth={1}
+>
+  <div
+    style={
+      Object {
+        "paddingBottom": 0,
+      }
+    }
+  >
+    <CardHeader
+      avatar="/images/undefined_sm.jpg"
+      title=""
+    />
+    <CardMedia
+      overlay={
+        <CardTitle
+          subtitle=""
+          title=""
+        />
+      }
+    >
+      <img
+        src="/images/undefined_lg.jpg"
+      />
+    </CardMedia>
+    <CardActions />
+  </div>
+</Paper>
+`;

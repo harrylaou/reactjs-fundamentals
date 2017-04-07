@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1491587037724" clover="3.2.0">
+  <project timestamp="1491587037725" name="All files">
+    <metrics statements="150" coveredstatements="127" conditionals="45" coveredconditionals="27" methods="54" coveredmethods="43" elements="249" coveredelements="197" complexity="0" loc="150" ncloc="150" packages="10" files="21" classes="21">
+      <package name="actions">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <file name="user.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/actions/user.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="1" count="3" type="stmt"/>
+          <line num="4" count="9" type="stmt"/>
+        </file>
+        <file name="users.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/actions/users.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="1" count="3" type="stmt"/>
+          <line num="3" count="3" type="stmt"/>
+        </file>
+        <file name="workshop.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/actions/workshop.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="1" count="3" type="stmt"/>
+          <line num="4" count="3" type="stmt"/>
+        </file>
+        <file name="workshops.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/actions/workshops.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="1" count="3" type="stmt"/>
+          <line num="3" count="3" type="stmt"/>
+        </file>
+      </package>
+      <package name="api">
+        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
+        <file name="index.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/api/index.js">
+          <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
+          <line num="4" count="2" type="stmt"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="14" count="2" type="stmt"/>
+          <line num="15" count="6" type="stmt"/>
+          <line num="18" count="6" type="stmt"/>
+          <line num="22" count="2" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
+          <line num="26" count="1" type="stmt"/>
+          <line num="30" count="2" type="stmt"/>
+          <line num="31" count="1" type="stmt"/>
+          <line num="34" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="components">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <file name="AppNavDrawer.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/components/AppNavDrawer.js">
+          <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="28" count="1" type="stmt"/>
+          <line num="32" count="1" type="stmt"/>
+        </file>
+        <file name="Home.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/components/Home.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="components.user">
+        <metrics statements="26" coveredstatements="20" conditionals="10" coveredconditionals="5" methods="3" coveredmethods="3"/>
+        <file name="UserList.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/components/user/UserList.js">
+          <metrics statements="12" coveredstatements="10" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="2"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="19" count="1" type="stmt"/>
+          <line num="20" count="1" type="stmt"/>
+          <line num="24" count="1" type="cond" truecount="2" falsecount="2"/>
+          <line num="25" count="0" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="28" count="1" type="stmt"/>
+          <line num="29" count="1" type="stmt"/>
+          <line num="31" count="1" type="stmt"/>
+          <line num="39" count="1" type="stmt"/>
+        </file>
+        <file name="UserProfile.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/components/user/UserProfile.js">
+          <metrics statements="14" coveredstatements="10" conditionals="6" coveredconditionals="3" methods="1" coveredmethods="1"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="8" count="10" type="stmt"/>
+          <line num="9" count="10" type="stmt"/>
+          <line num="10" count="10" type="cond" truecount="2" falsecount="2"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="13" count="10" type="stmt"/>
+          <line num="14" count="10" type="stmt"/>
+          <line num="15" count="10" type="stmt"/>
+          <line num="17" count="10" type="cond" truecount="1" falsecount="1"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="23" count="10" type="stmt"/>
+          <line num="40" count="2" type="stmt"/>
+        </file>
+      </package>
+      <package name="components.workshop">
+        <metrics statements="28" coveredstatements="21" conditionals="10" coveredconditionals="5" methods="5" coveredmethods="4"/>
+        <file name="WorkshopInfo.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/components/workshop/WorkshopInfo.js">
+          <metrics statements="15" coveredstatements="10" conditionals="6" coveredconditionals="3" methods="2" coveredmethods="1"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="14" count="1" type="cond" truecount="2" falsecount="2"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="18" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="31" count="1" type="stmt"/>
+          <line num="43" count="1" type="stmt"/>
+        </file>
+        <file name="WorkshopList.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/components/workshop/WorkshopList.js">
+          <metrics statements="13" coveredstatements="11" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="22" count="1" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
+          <line num="27" count="1" type="cond" truecount="2" falsecount="2"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="31" count="1" type="stmt"/>
+          <line num="32" count="1" type="stmt"/>
+          <line num="34" count="1" type="stmt"/>
+          <line num="42" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="containers.user">
+        <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="7"/>
+        <file name="UserProfileContainer.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/containers/user/UserProfileContainer.js">
+          <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="7"/>
+          <line num="10" count="6" type="stmt"/>
+          <line num="14" count="5" type="stmt"/>
+          <line num="18" count="5" type="stmt"/>
+          <line num="21" count="5" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="29" count="9" type="stmt"/>
+          <line num="39" count="1" type="stmt"/>
+          <line num="43" count="9" type="stmt"/>
+          <line num="47" count="6" type="stmt"/>
+        </file>
+      </package>
+      <package name="reducers">
+        <metrics statements="17" coveredstatements="17" conditionals="12" coveredconditionals="12" methods="4" coveredmethods="4"/>
+        <file name="index.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/reducers/index.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="7" count="1" type="stmt"/>
+        </file>
+        <file name="user.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/reducers/user.js">
+          <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+          <line num="3" count="2" type="cond" truecount="1" falsecount="0"/>
+          <line num="4" count="13" type="cond" truecount="2" falsecount="0"/>
+          <line num="6" count="5" type="stmt"/>
+          <line num="9" count="8" type="stmt"/>
+        </file>
+        <file name="users.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/reducers/users.js">
+          <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+          <line num="3" count="2" type="cond" truecount="1" falsecount="0"/>
+          <line num="4" count="13" type="cond" truecount="2" falsecount="0"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="9" count="11" type="stmt"/>
+        </file>
+        <file name="workshop.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/reducers/workshop.js">
+          <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+          <line num="3" count="2" type="cond" truecount="1" falsecount="0"/>
+          <line num="4" count="13" type="cond" truecount="2" falsecount="0"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="9" count="11" type="stmt"/>
+        </file>
+        <file name="workshops.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/reducers/workshops.js">
+          <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+          <line num="3" count="2" type="cond" truecount="1" falsecount="0"/>
+          <line num="4" count="13" type="cond" truecount="2" falsecount="0"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="9" count="11" type="stmt"/>
+        </file>
+      </package>
+      <package name="store">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="index.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/store/index.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="2" type="stmt"/>
+        </file>
+      </package>
+      <package name="testUtils">
+        <metrics statements="7" coveredstatements="6" conditionals="1" coveredconditionals="0" methods="9" coveredmethods="3"/>
+        <file name="index.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/testUtils/index.js">
+          <metrics statements="7" coveredstatements="6" conditionals="1" coveredconditionals="0" methods="9" coveredmethods="3"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="2" count="6" type="stmt"/>
+          <line num="4" count="6" type="stmt"/>
+          <line num="5" count="9" type="stmt"/>
+          <line num="6" count="9" type="stmt"/>
+          <line num="14" count="2" type="cond" truecount="0" falsecount="1"/>
+          <line num="18" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="utils">
+        <metrics statements="33" coveredstatements="25" conditionals="12" coveredconditionals="5" methods="9" coveredmethods="6"/>
+        <file name="WithRouter.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/utils/WithRouter.js">
+          <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="2" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+        </file>
+        <file name="WithWidth.js" path="/Users/fsdevlondon/LeanJS/reactjs-fundamentals/src/utils/WithWidth.js">
+          <metrics statements="28" coveredstatements="20" conditionals="12" coveredconditionals="5" methods="7" coveredmethods="4"/>
+          <line num="3" count="3" type="stmt"/>
+          <line num="4" count="3" type="stmt"/>
+          <line num="5" count="3" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="15" count="4" type="stmt"/>
+          <line num="16" count="4" type="stmt"/>
+          <line num="17" count="4" type="stmt"/>
+          <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="28" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="34" count="0" type="stmt"/>
+          <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="43" count="4" type="stmt"/>
+          <line num="45" count="4" type="cond" truecount="1" falsecount="1"/>
+          <line num="46" count="4" type="stmt"/>
+          <line num="48" count="4" type="cond" truecount="2" falsecount="0"/>
+          <line num="49" count="2" type="stmt"/>
+          <line num="50" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="51" count="1" type="stmt"/>
+          <line num="53" count="1" type="stmt"/>
+          <line num="56" count="4" type="stmt"/>
+          <line num="60" count="4" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>

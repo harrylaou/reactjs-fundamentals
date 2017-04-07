@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WorkshopList /> should render with default props 1`] = `
+<div
+  className="view-container"
+>
+  <List
+    className="view"
+  >
+    <ListItem
+      autoGenerateNestedIndicator={true}
+      disableKeyboardFocus={false}
+      disabled={false}
+      initiallyOpen={false}
+      insetChildren={false}
+      leftIcon={
+        <ActionGrade
+          color="#ff4081"
+        />
+      }
+      nestedItems={Array []}
+      nestedLevel={0}
+      onClick={[Function]}
+      onKeyboardFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onNestedListToggle={[Function]}
+      onTouchStart={[Function]}
+      open={null}
+      primaryText="React Fundamentals  -  990"
+      primaryTogglesNestedList={false}
+      rightAvatar={
+        <div>
+          <Avatar
+            size={40}
+            src="goo.gl/7f00gI"
+          />
+        </div>
+      }
+      secondaryTextLines={1}
+      style={
+        Object {
+          "color": "black",
+        }
+      }
+    />
+  </List>
+  <div
+    className="view"
+  />
+</div>
+`;

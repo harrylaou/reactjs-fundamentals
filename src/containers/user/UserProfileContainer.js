@@ -4,7 +4,7 @@ import UserProfile from '../../components/user/UserProfile'
 import * as api from '../../api'
 import * as actions from '../../actions/user'
 
-class UserProfileContainer extends Component {
+export class UserProfileContainer extends Component {
   constructor() {
     super()
     this.fetchUser = this.fetchUser.bind(this)

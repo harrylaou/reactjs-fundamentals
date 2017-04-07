@@ -10,7 +10,6 @@ Array [
 
 exports[`#Reducer: Workshop When Action RECEIVE_WORKSHOPS return state 1`] = `
 Array [
-  "meetup",
   "React Fundamentals",
 ]
 `;

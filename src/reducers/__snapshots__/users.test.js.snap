@@ -10,7 +10,6 @@ Array [
 
 exports[`#Reducer: Users When Action RECEIVE_USERS return state 1`] = `
 Array [
-  "data",
   "Eduard",
 ]
 `;

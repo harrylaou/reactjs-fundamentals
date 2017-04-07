@@ -1,64 +1,73 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
-import ConnectedUserProfileContainer, {UserProfileContainer} from './UserProfileContainer'
-import { mockFetchContainer } from '../../testUtils'
+import ConnectedLogoutContainer, {LogoutContainer} from './LogoutContainer'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 import FakeConfigureStore from 'redux-mock-store'
-import ActualConfigureStore from '../../store'
+import ActualConfigureStore from '../store'
 import {Provider} from 'react-redux'
-import * as actions from '../../actions/user'
 
+import injectTapEventPlugin from 'react-tap-event-plugin'
+injectTapEventPlugin()
 
-describe('<UserProfileContainer />', () => {
+describe('<LogoutContainer />', () => {
   it('should render with default props', () => {
+    const logout = jest.fn()
+    const push = jest.fn()
     const props = {
-      params: { username: '123' }
+      params: { username: '123' },
+      color: '',
+      router: {push},
+      logout
     }
 
     const wrapper = shallow(
-      <UserProfileContainer {...props} />
+      <LogoutContainer {...props} />
     )
 
     expect(shallowToJson(wrapper)).toMatchSnapshot()
+
+    wrapper.instance().logoutUser()
+
+    expect(logout).toBeCalled()
+    expect(push).toBeCalledWith('/login')
   })
 
 
-  const userData = {
-    user: {
-      name: {
-        title: 'mr',
-        first: 'Eduard',
-        last: 'lama'
-      },
-      email: 'eduard@gmail.com',
-      gender: 'male'
-    }
-  }
-
   const initialState = {
-    user: {
-      name: {
-        title: 'mr',
-        first: 'Manolo',
-        last: 'lama'
-      },
-      email: 'manolo@gmail.com',
-      gender: 'male'
-    }
   }
   const mockStore = FakeConfigureStore()
+  const logout = jest.fn()
+  const push = () => {}
+  const replace = () => {}
+  const go = () => {}
+  const goBack = () => {}
+  const goForward = () => {}
+  const setRouteLeaveHook = () => {}
+  const isActive = () => {}
+
   const props = {
-    params: { username: '123' }
+    router: {
+      push,
+      replace,
+      go,
+      goBack,
+      goForward,
+      setRouteLeaveHook,
+      isActive,
+      setRouteLeaveHook
+    },
+    color: '',
+    logout
   }
   let store
 
-  describe('<ConnectedUserProfileContainer />', () => {
+  describe('<ConnectedLogoutContainer />', () => {
     it('should render connected component', () => {
       store = mockStore(initialState)
       const container = shallow(
-        <ConnectedUserProfileContainer
+        <ConnectedLogoutContainer
           {...props}
           store={store}
         />
@@ -74,11 +83,9 @@ describe('<UserProfileContainer />', () => {
     beforeEach(()=>{
       store = mockStore(initialState)
 
-      mockFetchContainer(userData.user)
-
       wrapper = mount(
         <Provider store={store} >
-          <ConnectedUserProfileContainer
+          <ConnectedLogoutContainer
             {...props}
           />
         </Provider>,
@@ -94,18 +101,7 @@ describe('<UserProfileContainer />', () => {
     })
 
     it('should mount and map connect connected component', () => {
-      expect(wrapper.find(ConnectedUserProfileContainer).length).toEqual(1)
-    })
-
-    it('should Prop matches with initialState', () => {
-      expect(wrapper.find(UserProfileContainer).prop('user')).toEqual(initialState.user)
-    })
-
-    it('should check action dispatch', () => {
-      store.dispatch(actions.receiveUser(userData.user))
-      const action = store.getActions()
-
-      expect(action[0].type).toBe(actions.RECEIVE_USER)
+      expect(wrapper.find(ConnectedLogoutContainer).length).toEqual(1)
     })
   })
 
@@ -115,11 +111,9 @@ describe('<UserProfileContainer />', () => {
     beforeEach(()=>{
       store = ActualConfigureStore(initialState)
 
-      mockFetchContainer(userData.user)
-
       wrapper = mount(
         <Provider store={store} >
-          <ConnectedUserProfileContainer
+          <ConnectedLogoutContainer
             {...props}
           />
         </Provider>,
@@ -135,14 +129,7 @@ describe('<UserProfileContainer />', () => {
     })
 
     it('should mount and map connect connected component', () => {
-      expect(wrapper.find(ConnectedUserProfileContainer).length).toEqual(1)
-    })
-
-    it('should check action dispatch', () => {
-      //OR store.dispatch(actions.receiveUser(userData))
-      wrapper.find(UserProfileContainer).props().dispatch(actions.receiveUser(userData.user))
-
-      expect(wrapper.find(UserProfileContainer).prop('user')).toEqual(userData.user)
+      expect(wrapper.find(ConnectedLogoutContainer).length).toEqual(1)
     })
   })
 })

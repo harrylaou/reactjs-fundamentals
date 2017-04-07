@@ -5,7 +5,7 @@ import Login from '../components/Login'
 import { loggedIn } from '../actions/session'
 import { setSessionToken } from '../utils/localStorage'
 
-class LoginContainer extends React.Component {
+export class LoginContainer extends React.Component {
   constructor () {
     super()
 

@@ -9,3 +9,4 @@ test(`Return an Action tyoe ${RECEIVE_USER}`, () => {
   
   expect(receiveUser(user)).toMatchSnapshot()
 })
+

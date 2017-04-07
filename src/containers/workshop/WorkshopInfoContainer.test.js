@@ -1,64 +1,68 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
-import ConnectedUserProfileContainer, {UserProfileContainer} from './UserProfileContainer'
+import ConnectedWorkshopInfoContainer, {WorkshopInfoContainer} from './WorkshopInfoContainer'
 import { mockFetchContainer } from '../../testUtils'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 import FakeConfigureStore from 'redux-mock-store'
 import ActualConfigureStore from '../../store'
 import {Provider} from 'react-redux'
-import * as actions from '../../actions/user'
+import * as actions from '../../actions/workshop'
 
+import injectTapEventPlugin from 'react-tap-event-plugin'
+injectTapEventPlugin()
 
 describe('<UserProfileContainer />', () => {
   it('should render with default props', () => {
     const props = {
-      params: { username: '123' }
+      params: { workshop: '123' }
     }
 
     const wrapper = shallow(
-      <UserProfileContainer {...props} />
+      <WorkshopInfoContainer {...props} />
     )
 
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
 
-  const userData = {
-    user: {
-      name: {
-        title: 'mr',
-        first: 'Eduard',
-        last: 'lama'
-      },
-      email: 'eduard@gmail.com',
-      gender: 'male'
+  const workshopData = {
+    workshop: {
+      title: 'reactjs_fundamentals',
+      price: 990,
+      url: 'https://reactjs.academy/react-redux-training-london',
+      instructors: [{
+        name: 'Manolo',
+        url: '',
+        avatar: ''
+      }]
     }
   }
 
   const initialState = {
-    user: {
-      name: {
-        title: 'mr',
-        first: 'Manolo',
-        last: 'lama'
-      },
-      email: 'manolo@gmail.com',
-      gender: 'male'
+    workshop: {
+      title: 'reactjs_advanced',
+      price: 990,
+      url: 'https://reactjs.academy/react-redux-training-london',
+      instructors: [{
+        name: 'Paco',
+        url: '',
+        avatar: ''
+      }]
     }
   }
   const mockStore = FakeConfigureStore()
   const props = {
-    params: { username: '123' }
+    params: { workshop: '123' }
   }
   let store
 
-  describe('<ConnectedUserProfileContainer />', () => {
+  describe('<ConnectedWorkshopInfoContainer />', () => {
     it('should render connected component', () => {
       store = mockStore(initialState)
       const container = shallow(
-        <ConnectedUserProfileContainer
+        <ConnectedWorkshopInfoContainer
           {...props}
           store={store}
         />
@@ -74,11 +78,11 @@ describe('<UserProfileContainer />', () => {
     beforeEach(()=>{
       store = mockStore(initialState)
 
-      mockFetchContainer(userData.user)
+      mockFetchContainer(workshopData.wprkshop)
 
       wrapper = mount(
         <Provider store={store} >
-          <ConnectedUserProfileContainer
+          <ConnectedWorkshopInfoContainer
             {...props}
           />
         </Provider>,
@@ -94,18 +98,18 @@ describe('<UserProfileContainer />', () => {
     })
 
     it('should mount and map connect connected component', () => {
-      expect(wrapper.find(ConnectedUserProfileContainer).length).toEqual(1)
+      expect(wrapper.find(ConnectedWorkshopInfoContainer).length).toEqual(1)
     })
 
     it('should Prop matches with initialState', () => {
-      expect(wrapper.find(UserProfileContainer).prop('user')).toEqual(initialState.user)
+      expect(wrapper.find(WorkshopInfoContainer).prop('workshop')).toEqual(initialState.workshop)
     })
 
     it('should check action dispatch', () => {
-      store.dispatch(actions.receiveUser(userData.user))
+      store.dispatch(actions.receiveWorkshop(workshopData.workshop))
       const action = store.getActions()
 
-      expect(action[0].type).toBe(actions.RECEIVE_USER)
+      expect(action[0].type).toBe(actions.RECEIVE_WORKSHOP)
     })
   })
 
@@ -115,11 +119,11 @@ describe('<UserProfileContainer />', () => {
     beforeEach(()=>{
       store = ActualConfigureStore(initialState)
 
-      mockFetchContainer(userData.user)
+      mockFetchContainer(workshopData.workshop)
 
       wrapper = mount(
         <Provider store={store} >
-          <ConnectedUserProfileContainer
+          <ConnectedWorkshopInfoContainer
             {...props}
           />
         </Provider>,
@@ -135,14 +139,14 @@ describe('<UserProfileContainer />', () => {
     })
 
     it('should mount and map connect connected component', () => {
-      expect(wrapper.find(ConnectedUserProfileContainer).length).toEqual(1)
+      expect(wrapper.find(ConnectedWorkshopInfoContainer).length).toEqual(1)
     })
 
     it('should check action dispatch', () => {
-      //OR store.dispatch(actions.receiveUser(userData))
-      wrapper.find(UserProfileContainer).props().dispatch(actions.receiveUser(userData.user))
+      //OR store.dispatch(actions.receiveWorkshop(workshopData))
+      wrapper.find(WorkshopInfoContainer).props().dispatch(actions.receiveWorkshop(workshopData.workshop))
 
-      expect(wrapper.find(UserProfileContainer).prop('user')).toEqual(userData.user)
+      expect(wrapper.find(WorkshopInfoContainer).prop('workshop')).toEqual(workshopData.workshop)
     })
   })
 })

@@ -13,7 +13,7 @@ describe('#Reducer: Workshop', () => {
   })
 
   it(`When Action ${RECEIVE_WORKSHOPS} return state`,() => {
-    expect(workshops(["meetup"], { type: RECEIVE_WORKSHOPS, workshops: ["React Fundamentals"] })).toEqual(["meetup", "React Fundamentals"])
+    expect(workshops(["meetup"], { type: RECEIVE_WORKSHOPS, workshops: ["React Fundamentals"] })).toEqual(["React Fundamentals"])
     expect(workshops(["meetup"], { type: RECEIVE_WORKSHOPS, workshops: ["React Fundamentals"] })).toMatchSnapshot()
   })
 })

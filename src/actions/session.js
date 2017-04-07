@@ -7,5 +7,5 @@ export const logout = () => ({
 
 export const loggedIn = token => ({
   type: LOGGED_IN,
-  token: token
+  token
 })

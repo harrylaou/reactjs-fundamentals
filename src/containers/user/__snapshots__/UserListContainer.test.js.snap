@@ -1,11 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<UserProfileContainer /> <ConnectedUserProfileContainer /> should render connected component 1`] = `
-<UserProfileContainer
+exports[`<UserListContainer /> <ConnectedUserListContainer /> should render connected component 1`] = `
+<withRouter(WithWidth)
   dispatch={[Function]}
   params={
     Object {
       "username": "123",
+    }
+  }
+  router={
+    Object {
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "isActive": [Function],
+      "push": [Function],
+      "replace": [Function],
+      "setRouteLeaveHook": [Function],
     }
   }
   store={
@@ -36,27 +47,39 @@ exports[`<UserProfileContainer /> <ConnectedUserProfileContainer /> should rende
       "unsubscribe": null,
     }
   }
-  user={
-    Object {
-      "email": "manolo@gmail.com",
-      "gender": "male",
-      "name": Object {
-        "first": "Manolo",
-        "last": "lama",
-        "title": "mr",
+  users={
+    Array [
+      Object {
+        "email": "manolo@gmail.com",
+        "gender": "male",
+        "name": Object {
+          "first": "Manolo",
+          "last": "lama",
+          "title": "mr",
+        },
+        "username": "mano",
       },
-    }
+    ]
   }
+  width={3}
 />
 `;
 
-exports[`<UserProfileContainer /> should render with default props 1`] = `
-<UserProfile
+exports[`<UserListContainer /> should render with default props 1`] = `
+<UserList
   params={
     Object {
       "username": "123",
     }
   }
+  router={
+    Object {
+      "push": [Function],
+    }
+  }
+  showUserProfile={[Function]}
   username="123"
+  users={Array []}
+  width={3}
 />
 `;

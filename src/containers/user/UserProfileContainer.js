@@ -49,7 +49,6 @@ export class UserProfileContainer extends Component {
 
 UserProfileContainer.propTypes = {
   params: React.PropTypes.object.isRequired,
-  dispatch: React.PropTypes.func.isRequired,
   user: React.PropTypes.object
 }
 

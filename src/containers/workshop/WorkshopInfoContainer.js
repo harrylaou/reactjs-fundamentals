@@ -4,7 +4,7 @@ import WorkshopInfo from '../../components/workshop/WorkshopInfo'
 import * as api from '../../api'
 import * as actions from '../../actions/workshop'
 
-class WorkshopInfoContainer extends Component {
+export class WorkshopInfoContainer extends Component {
   constructor() {
     super()
     this.fetchWorkshop = this.fetchWorkshop.bind(this)
@@ -48,7 +48,6 @@ class WorkshopInfoContainer extends Component {
 
 WorkshopInfoContainer.propTypes = {
   params: React.PropTypes.object.isRequired,
-  dispatch: React.PropTypes.func.isRequired,
   workshop: React.PropTypes.object
 }
 

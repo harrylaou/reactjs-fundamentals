@@ -13,7 +13,7 @@ describe('#Reducer: Users', () => {
   })
 
   it(`When Action ${RECEIVE_USERS} return state`,() => {
-    expect(users(["data"], { type: RECEIVE_USERS, users: ["Eduard"] })).toEqual(["data", "Eduard"])
+    expect(users(["data"], { type: RECEIVE_USERS, users: ["Eduard"] })).toEqual(["Eduard"])
     expect(users(["data"], { type: RECEIVE_USERS, users: ["Eduard"] })).toMatchSnapshot()
   })
 })

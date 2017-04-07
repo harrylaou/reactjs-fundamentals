@@ -3,7 +3,7 @@ import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import { withRouter } from 'react-router'
 
-class AppNavDrawer extends Component {
+export class AppNavDrawer extends Component {
   menuItemClicked(value) {
     this.props.router.push(value)
     this.props.toggleNav()

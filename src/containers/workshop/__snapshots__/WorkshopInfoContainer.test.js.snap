@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<UserProfileContainer /> <ConnectedUserProfileContainer /> should render connected component 1`] = `
-<UserProfileContainer
+exports[`<UserProfileContainer /> <ConnectedWorkshopInfoContainer /> should render connected component 1`] = `
+<WorkshopInfoContainer
   dispatch={[Function]}
   params={
     Object {
-      "username": "123",
+      "workshop": "123",
     }
   }
   store={
@@ -36,27 +36,29 @@ exports[`<UserProfileContainer /> <ConnectedUserProfileContainer /> should rende
       "unsubscribe": null,
     }
   }
-  user={
+  workshop={
     Object {
-      "email": "manolo@gmail.com",
-      "gender": "male",
-      "name": Object {
-        "first": "Manolo",
-        "last": "lama",
-        "title": "mr",
-      },
+      "instructors": Array [
+        Object {
+          "avatar": "",
+          "name": "Paco",
+          "url": "",
+        },
+      ],
+      "price": 990,
+      "title": "reactjs_advanced",
+      "url": "https://reactjs.academy/react-redux-training-london",
     }
   }
 />
 `;
 
 exports[`<UserProfileContainer /> should render with default props 1`] = `
-<UserProfile
+<WorkshopInfo
   params={
     Object {
-      "username": "123",
+      "workshop": "123",
     }
   }
-  username="123"
 />
 `;

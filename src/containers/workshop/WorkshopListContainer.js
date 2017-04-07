@@ -6,7 +6,7 @@ import * as actions from '../../actions/workshops'
 import withWidth from '../../utils/WithWidth'
 import { withRouter } from 'react-router'
 
-class WorkshopListContainer extends Component {
+export class WorkshopListContainer extends Component {
   constructor() {
     super()
     this.showWorkshop = this.showWorkshop.bind(this)
@@ -46,7 +46,6 @@ WorkshopListContainer.propTypes = {
   width: React.PropTypes.number.isRequired,
   router: React.PropTypes.object.isRequired,
   workshops: React.PropTypes.array,
-  dispatch: React.PropTypes.func.isRequired,
   params: React.PropTypes.object.isRequired
 }
 

@@ -6,7 +6,7 @@ import * as api from '../../api'
 import * as actions from '../../actions/users'
 import withWidth from '../../utils/WithWidth'
 
-class UserListContainer extends Component {
+export class UserListContainer extends Component {
   constructor() {
     super()
     this.showUserProfile = this.showUserProfile.bind(this)
@@ -47,7 +47,6 @@ UserListContainer.propTypes = {
   params: React.PropTypes.object.isRequired,
   width: React.PropTypes.number.isRequired,
   router: React.PropTypes.object.isRequired,
-  dispatch: React.PropTypes.func.isRequired,
   users: React.PropTypes.array,
 }
 

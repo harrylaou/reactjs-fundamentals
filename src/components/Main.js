@@ -11,7 +11,7 @@ import LogoutContainer from '../containers/LogoutContainer'
 
 const muiTheme = getMuiTheme(theme)
 
-class Main extends Component {
+export class Main extends Component {
   constructor() {
     super()
     this.state = {

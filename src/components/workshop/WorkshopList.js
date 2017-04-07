@@ -6,9 +6,9 @@ import { pinkA200 } from 'material-ui/styles/colors'
 import withWidth, { LARGE } from '../../utils/WithWidth'
 
 const WorkshopList = (props) => {
-  let listItems = props.workshops.map(workshop => (
+  let listItems = props.workshops.map((workshop, index) => (
     <ListItem
-      onClick={props.showWorkshop.bind(this, workshop)} key={workshop.id} style={{color: "black"}}
+      onClick={props.showWorkshop.bind(this, workshop)} key={index} style={{color: "black"}}
       primaryText={ `${workshop.title}  -  ${workshop.price}`}
       leftIcon={<ActionGrade color={pinkA200} />}
       rightAvatar={(

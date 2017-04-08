@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/jest",
+    "coverage": "./node_modules/.bin/jest --coverage",
     "start": "./node_modules/.bin/webpack-dev-server"
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(css)$": "<rootDir>/node_modules/jest-css-modules"
+      "\\.(css)$": "<rootDir>/node_modules/jest-css-modules",
+      "collectCoverage": true,
+      "coverageFormats": ["json", "html"]
     }
   },
   "keywords": [

@@ -8,7 +8,7 @@ import LoginContainer from '../containers/LoginContainer'
 import WorkshopListContainer from '../containers/workshop/WorkshopListContainer'
 import WorkshopInfoContainer from '../containers/workshop/WorkshopInfoContainer'
 
-const authCheck = (store, nextState, replace) => {
+export const authCheck = (store, nextState, replace) => {
   const token = store.getState().session.token
 
   if (!token) {

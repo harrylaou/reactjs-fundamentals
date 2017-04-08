@@ -10,10 +10,8 @@ const session = (state = { token }, action) => {
   switch (action.type) {
     case LOGGED_IN:
       return { ...state, token: action.token }
-      break;
     case LOG_OUT:
       return { ...state, token: null }
-      break;
     default:
       return state
   }

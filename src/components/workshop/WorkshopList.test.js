@@ -28,4 +28,25 @@ describe('<WorkshopList />', () => {
 
     expect(onClick).toBeCalledWith(workshop)
   })
+
+  it('should render with default props', () => {
+    const workshop = {
+      id: 'rfct123',
+      title: 'React Fundamentals',
+      price: 990,
+      instructors: [{ avatar: 'goo.gl/7f00gI'}]
+    }
+    const props = {
+      workshop: 'rfct123',
+      workshops: [workshop],
+      width: 1,
+      showWorkshop: () => {}
+    }
+
+    const wrapper = shallow(
+      <WorkshopList {...props} />
+    )
+
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
+  })
 })

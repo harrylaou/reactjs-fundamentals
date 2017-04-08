@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<UserList /> should not render detailview 1`] = `
+<div
+  className="view-container"
+>
+  <div
+    className="view"
+  />
+</div>
+`;
+
 exports[`<UserList /> should render with default props 1`] = `
 <div
   className="view-container"

@@ -1,7 +1,12 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
-import {LoginContainer} from './LoginContainer'
+import ConnectedLoginContainer, {LoginContainer} from './LoginContainer'
+
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import FakeConfigureStore from 'redux-mock-store'
+import {Provider} from 'react-redux'
+import * as actions from '../actions/session'
 
 import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
@@ -58,5 +63,32 @@ describe('<LoginContainer />', () => {
     wrapper.instance().handleChange('password', { target: { value }})
 
     expect(setState).toBeCalledWith({ password: value })
+  })
+
+  it('Method #dispatchLoggedInAction() in dispatcher should update state', () => {
+    const mockStore = FakeConfigureStore()
+    const store = mockStore()
+    const props = {}
+
+    const container = mount(
+      <Provider store={store} >
+        <ConnectedLoginContainer
+          {...props}
+        />
+      </Provider>,
+      {
+        context: {
+          muiTheme: getMuiTheme()
+        },
+        childContextTypes:{
+          muiTheme: React.PropTypes.object.isRequired,
+        }
+      }
+    )
+
+    container.find(LoginContainer).props().dispatchLoggedInAction()
+
+    const action = store.getActions()
+    expect(action[0].type).toBe(actions.LOGGED_IN)
   })
 })

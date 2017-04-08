@@ -50,3 +50,13 @@ exports[`<WorkshopList /> should render with default props 1`] = `
   />
 </div>
 `;
+
+exports[`<WorkshopList /> should render with default props 2`] = `
+<div
+  className="view-container"
+>
+  <div
+    className="view"
+  />
+</div>
+`;

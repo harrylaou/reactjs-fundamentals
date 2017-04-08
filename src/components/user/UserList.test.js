@@ -29,4 +29,26 @@ describe('<UserList />', () => {
 
     expect(onClick).toBeCalledWith(user)
   })
+
+  it('should not render detailview', () => {
+    const user = {
+      username: 'paco',
+      name: {
+        first: 'paco',
+        last: 'martinez'
+      }
+    }
+    const props = {
+      username: 'paco',
+      users: [user],
+      width: 1,
+      showUserProfile: () => {}
+    }
+
+    const wrapper = shallow(
+      <UserList {...props} />
+    )
+
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
+  })
 })

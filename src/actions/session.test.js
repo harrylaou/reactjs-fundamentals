@@ -11,12 +11,7 @@ test(`Return an Action tyoe ${LOGGED_IN}`, () => {
 })
 
 test(`Return an Action tyoe ${LOG_OUT}`, () => {
-  const user = "Francis"
-  expect(logout()).toEqual({
-    type: LOG_OUT
-  })
 
-  expect(logout()).toMatchSnapshot()
 })
 
 

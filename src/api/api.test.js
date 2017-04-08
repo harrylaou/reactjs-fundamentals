@@ -19,13 +19,10 @@ describe('#API', () => {
   })
 
   it('getUsers()', async () => {
-    const response = await api.getWorkshops()
-    expect(response.data).toEqual(data)
+
   })
 
   it('getUser()', async () => {
-    const response = await api.getWorkshop("react_fundamentals")
-    expect(response.params).toEqual('/data/workshops/react_fundamentals.json')
-    expect(response.data).toEqual(data)
+
   })
 })

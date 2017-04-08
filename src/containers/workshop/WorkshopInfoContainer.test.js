@@ -15,15 +15,7 @@ injectTapEventPlugin()
 
 describe('<UserProfileContainer />', () => {
   it('should render with default props', () => {
-    const props = {
-      params: { workshop: '123' }
-    }
 
-    const wrapper = shallow(
-      <WorkshopInfoContainer {...props} />
-    )
-
-    expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
 
@@ -60,15 +52,7 @@ describe('<UserProfileContainer />', () => {
 
   describe('<ConnectedWorkshopInfoContainer />', () => {
     it('should render connected component', () => {
-      store = mockStore(initialState)
-      const container = shallow(
-        <ConnectedWorkshopInfoContainer
-          {...props}
-          store={store}
-        />
-      )
 
-      expect(shallowToJson(container)).toMatchSnapshot()
     })
   })
 
@@ -98,18 +82,15 @@ describe('<UserProfileContainer />', () => {
     })
 
     it('should mount and map connect connected component', () => {
-      expect(wrapper.find(ConnectedWorkshopInfoContainer).length).toEqual(1)
+
     })
 
     it('should Prop matches with initialState', () => {
-      expect(wrapper.find(WorkshopInfoContainer).prop('workshop')).toEqual(initialState.workshop)
+
     })
 
     it('should check action dispatch', () => {
-      store.dispatch(actions.receiveWorkshop(workshopData.workshop))
-      const action = store.getActions()
 
-      expect(action[0].type).toBe(actions.RECEIVE_WORKSHOP)
     })
   })
 
@@ -139,14 +120,11 @@ describe('<UserProfileContainer />', () => {
     })
 
     it('should mount and map connect connected component', () => {
-      expect(wrapper.find(ConnectedWorkshopInfoContainer).length).toEqual(1)
+
     })
 
     it('should check action dispatch', () => {
-      //OR store.dispatch(actions.receiveWorkshop(workshopData))
-      wrapper.find(WorkshopInfoContainer).props().dispatch(actions.receiveWorkshop(workshopData.workshop))
 
-      expect(wrapper.find(WorkshopInfoContainer).prop('workshop')).toEqual(workshopData.workshop)
     })
   })
 })

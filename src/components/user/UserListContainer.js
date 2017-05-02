@@ -5,26 +5,31 @@ import Divider from 'material-ui/Divider'
 import Avatar from 'material-ui/Avatar'
 import {pinkA200, transparent} from 'material-ui/styles/colors'
 import UserList from './UserList'
-import withWidth, { LARGE} from '../../utils/WithWidth'
+import withWidth, {LARGE} from '../../utils/WithWidth'
 import es6promise from 'es6-promise'
 import 'isomorphic-fetch'
 
 es6promise.polyfill()
 
 class UserListContainer extends Component {
-  constructor() {
+  constructor () {
     super()
     //add some code here
   }
-    
-  componentDidMount() {
+
+  componentDidMount () {
     //add some code here
   }
-    
-  render() {
+
+  render () {
     return (
       //you need to change something here
-      <UserList username={this.props.params.username} users={this.state.users} />
+      (
+        <UserList
+          username={this.props.params.username}
+          users={this.state.users}
+        />
+      )
     )
   }
 }

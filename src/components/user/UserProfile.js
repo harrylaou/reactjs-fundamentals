@@ -1,7 +1,11 @@
 import React, {Component} from 'react'
 import {
-  Card, CardActions, CardHeader,
-  CardMedia, CardTitle, CardText
+  Card,
+  CardActions,
+  CardHeader,
+  CardMedia,
+  CardTitle,
+  CardText
 } from 'material-ui/Card'
 import es6promise from 'es6-promise'
 import 'isomorphic-fetch'
@@ -9,28 +13,31 @@ import 'isomorphic-fetch'
 es6promise.polyfill()
 
 class UserProfile extends Component {
-  constructor() {
+  constructor () {
     super()
-    this.state = { username: null }
+    this.state = {username: null}
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.fetchUser(this.props.params.username)
   }
 
-  fetchUser(username) {
+  fetchUser (username) {
     fetch(`/data/users/${username}.json`, {
-        method: 'get'
-    }).then((response) => {
-        return response.json()
-    }).then((data) => {
-        this.setState({user : data})
-    }).catch((err)=> {
-        console.log(err)
+      method: 'get'
     })
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        this.setState({user: data})
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
-  render() {
+  render () {
     let user = this.state.user
     let username = this.props.params.username
     if (user && user.username != username) {
@@ -40,7 +47,7 @@ class UserProfile extends Component {
     let email = ''
     let gender = ''
 
-    if (user){
+    if (user) {
       fullname = `${user.name.title} ${user.name.first} ${user.name.last}`
       email = user.email
       gender = user.gender
@@ -53,9 +60,7 @@ class UserProfile extends Component {
           subtitle={username}
           avatar={`/images/${username}_sm.jpg`}
         />
-        <CardMedia
-          overlay={<CardTitle title={email} subtitle={gender} />}
-        >
+        <CardMedia overlay={<CardTitle title={email} subtitle={gender} />}>
           <img src={`/images/${username}_lg.jpg`} />
         </CardMedia>
         <CardActions />

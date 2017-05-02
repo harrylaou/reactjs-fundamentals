@@ -3,28 +3,46 @@ import AppBar from 'material-ui/AppBar'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import {
-  pink, pinkA200, pink900, pink700, pinkA400, pinkA100, green100,
-  fullWhite, grey600, green500, green700, deepOrange500, cyan500,
-  cyan600, cyan700, grey900
+  pink,
+  pinkA200,
+  pink900,
+  pink700,
+  pinkA400,
+  pinkA100,
+  green100,
+  fullWhite,
+  grey600,
+  green500,
+  green700,
+  deepOrange500,
+  cyan500,
+  cyan600,
+  cyan700,
+  grey900
 } from 'material-ui/styles/colors'
 import RaisedButton from 'material-ui/RaisedButton'
 import AppNavDrawer from './AppNavDrawer'
-import {spacing, colorManipulator, typography, zIndex} from 'material-ui/styles'
+import {
+  spacing,
+  colorManipulator,
+  typography,
+  zIndex
+} from 'material-ui/styles'
 import withWidth, {MEDIUM, LARGE} from '../utils/WithWidth'
 import theme from '../Theme'
 
 const muiTheme = getMuiTheme(theme)
 
 class Main extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
-      nav: { open: false }
+      nav: {open: false}
     }
     this.toggleNav = this.toggleNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
   }
-  getStyles() {
+  getStyles () {
     const styles = {
       appBar: {
         position: 'fixed',
@@ -48,15 +66,15 @@ class Main extends Component {
     return styles
   }
 
-  toggleNav() {
-    this.setState({ nav: { open: !this.state.nav.open } })
+  toggleNav () {
+    this.setState({nav: {open: !this.state.nav.open}})
   }
 
-  closeNav() {
-    this.setState({ nav: { open: false } })
+  closeNav () {
+    this.setState({nav: {open: false}})
   }
 
-  render() {
+  render () {
     const {prepareStyles} = muiTheme
     let docked = false
     let navDrawerOpen = this.state.nav.open

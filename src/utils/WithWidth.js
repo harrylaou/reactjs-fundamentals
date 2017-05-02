@@ -4,37 +4,35 @@ export const SMALL = 1
 export const MEDIUM = 2
 export const LARGE = 3
 
-export default function withWidth(options = {}) {
+export default function withWidth (options = {}) {
   const {
-      largeWidth = 992,
-      mediumWidth = 768,
-      resizeInterval = 166,
+    largeWidth = 992,
+    mediumWidth = 768,
+    resizeInterval = 166
   } = options
 
-  return (MyComponent) => {
-
+  return MyComponent => {
     return class WithWidth extends Component {
-
-      constructor() {
+      constructor () {
         super()
-        this.state = { width: this.windowWidth() }
+        this.state = {width: this.windowWidth()}
         this.handleResize = this.handleResize.bind(this)
       }
 
-      componentDidMount() {
+      componentDidMount () {
         if (window) {
           window.addEventListener('resize', this.handleResize)
           this.handleResize()
         }
       }
 
-      componentWillUnmount() {
+      componentWillUnmount () {
         if (window) {
           window.removeEventListener('resize', this.handleResize)
         }
       }
 
-      handleResize() {
+      handleResize () {
         let width = this.windowWidth()
         if (width !== this.state.width) {
           this.setState({
@@ -43,7 +41,7 @@ export default function withWidth(options = {}) {
         }
       }
 
-      windowWidth() {
+      windowWidth () {
         let innerWidth = 0
         let width
         if (window) {
@@ -53,20 +51,16 @@ export default function withWidth(options = {}) {
           width = LARGE
         } else if (innerWidth >= mediumWidth) {
           width = MEDIUM
-        } else { // innerWidth < 768
+        } else {
+          // innerWidth < 768
           width = SMALL
         }
 
         return width
       }
 
-      render() {
-        return (
-          <MyComponent
-            {...this.props}
-            width={this.state.width}
-          />
-        )
+      render () {
+        return <MyComponent {...this.props} width={this.state.width} />
       }
     }
   }

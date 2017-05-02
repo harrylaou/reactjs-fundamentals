@@ -4,9 +4,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {AppContainer} from 'react-hot-loader'
-import {Router, Route, hashHistory} from 'react-router'
-import Routes from './config/Routes'
-import '../public/css/main.css'
+import App from './components/App'
 //remove injectTapEventPlugin when React 1.0 is released. Needed for onTouchTap. http://stackoverflow.com/a/34015469/988941
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
@@ -17,15 +15,15 @@ injectTapEventPlugin()
 try {
   ReactDOM.render(
     <AppContainer>
-      <Router history={hashHistory}>{Routes}</Router>
+      <App />
     </AppContainer>,
     rootEl
   )
   if (module.hot) {
-    module.hot.accept('../config/Routes', () => {
+    module.hot.accept('./components/App', () => {
       // If you use Webpack 2 in ES modules mode, you can
       // use <App /> here rather than require() a <NextApp />.
-      const NextApp = require('../config/Routes').default
+      const NextApp = require('./components/App').default
       ReactDOM.render(
         <AppContainer>
           <NextApp />

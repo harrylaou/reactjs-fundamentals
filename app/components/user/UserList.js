@@ -8,35 +8,18 @@ import {pinkA200, transparent} from 'material-ui/styles/colors'
 import withWidth, { LARGE} from '../../utils/WithWidth'
 import es6promise from 'es6-promise'
 import 'isomorphic-fetch'
+import {withRouter} from 'react-router'
 
 es6promise.polyfill()
 
 class UserList extends Component {
-  constructor() {
-    super()
-    this.state = {
-      users: []
-    }
-  }
-    
-  componentDidMount() {
-    fetch('/data/users.js', {
-        method: 'get'
-    }).then((response) => {
-        return response.json()
-    }).then((data) => {
-        this.setState({ users: data })
-    }).catch((err)=> {
-        console.log(err)
-    })
-  }
-    
+
   showUserProfile(user) {
-    this.context.router.push(`/users/${user.username}`)
+    this.props.router.push(`/users/${user.username}`)
   }
-    
+
   render() {
-    let listItems = this.state.users.map(user => (
+    let listItems = this.props.users.map(user => (
       <ListItem
         onClick={this.showUserProfile.bind(this, user)} key={user.username} style={{color: "black"}}
         primaryText={ `${user.name.first} ${user.name.last}`}
@@ -50,7 +33,7 @@ class UserList extends Component {
 
     let masterView, detailView
 
-    if (this.props.params.username && this.props.width !== LARGE) {
+    if (this.props.username && this.props.width !== LARGE) {
       masterView = childrenView
       detailView = null
     } else {
@@ -66,8 +49,4 @@ class UserList extends Component {
   }
 }
 
-export default withWidth()(UserList);
-
-UserList.contextTypes = {
-  router: React.PropTypes.object.isRequired
-}
+export default withWidth()(withRouter(UserList))

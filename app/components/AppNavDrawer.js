@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
-
-export default class AppNavDrawer extends Component {
+import {withRouter} from 'react-router'
+class AppNavDrawer extends Component {
   menuItemClicked(value) {
-    this.context.router.push(value)
+    this.props.router.push(value)
     this.props.toggleNav()
   }
 
@@ -19,15 +19,13 @@ export default class AppNavDrawer extends Component {
           Course Manager
         </div>
         <MenuItem onClick={this.menuItemClicked.bind(this,'/users')}>Students</MenuItem>
-        <MenuItem>Courses</MenuItem>
+        <MenuItem onClick={this.menuItemClicked.bind(this,'/workshops')}>Workshops</MenuItem>
       </Drawer>
     )
   }
 }
 
-AppNavDrawer.contextTypes = {
-  router: React.PropTypes.object.isRequired
-}
+export default withRouter(AppNavDrawer)
 
 AppNavDrawer.propTypes = {
     toggleNav: React.PropTypes.func.isRequired,

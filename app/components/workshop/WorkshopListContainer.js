@@ -4,28 +4,30 @@ import ActionGrade from 'material-ui/svg-icons/action/grade'
 import Divider from 'material-ui/Divider'
 import Avatar from 'material-ui/Avatar'
 import {pinkA200, transparent} from 'material-ui/styles/colors'
-import UserList from './UserList'
+import WorkshopList from './WorkshopList'
 import withWidth, { LARGE} from '../../utils/WithWidth'
 import es6promise from 'es6-promise'
 import 'isomorphic-fetch'
+import {withRouter} from 'react-router'
 
 es6promise.polyfill()
 
-class UserListContainer extends Component {
+class WorkshopListContainer extends Component {
     constructor() {
       super()
       this.state = {
-        users: []
+        workshops: []
       }
     }
 
   componentDidMount() {
-    fetch('/data/users.js', {
+    fetch('/data/workshops.js', {
         method: 'get'
     }).then((response) => {
         return response.json()
     }).then((data) => {
-        this.setState({ users: data })
+        console.log(data)
+        this.setState({ workshops: data })
     }).catch((err)=> {
         console.log(err)
     })
@@ -33,14 +35,20 @@ class UserListContainer extends Component {
 
   render() {
 
+
+    console.log("WorkshopListContainer id",this.props.params.id)
     return (
 
 
-    <UserList  username={this.props.params.username} users={this.state.users} >
+    <WorkshopList  id={this.props.params.id} workshops={this.state.workshops} >
         {this.props.children}
-    </UserList>
+    </WorkshopList>
     )
   }
 }
 
-export default UserListContainer
+export default withRouter(WorkshopListContainer)
+
+WorkshopListContainer.propTypes = {
+  router: React.PropTypes.object.isRequired
+}
